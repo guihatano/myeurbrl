@@ -2,6 +2,7 @@ package br.com.guihatano.myeurbrl.email;
 
 import java.util.Date;
 import javax.annotation.Resource;
+import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -13,9 +14,10 @@ import javax.mail.internet.MimeMessage;
 @Stateless
 public class EmailService {
 
-    @Resource(mappedName = "java:/mail/quotationMail")
+    @Resource(mappedName = "java:/mail/myeurbrlMail")
     private Session mailSession;
 
+    @Asynchronous
     public void sendEmail(String to, String subject, String body) {
         MimeMessage message = new MimeMessage(mailSession);
         try {
