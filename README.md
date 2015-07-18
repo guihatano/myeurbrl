@@ -29,12 +29,13 @@ It could be a desktop project, but I preferred to do web.
 
 ## Configure Javamail in WildFly
 
+I'm using gmail (don't forget to allow "less secure apps" https://www.google.com/settings/security/lesssecureapps)
+
 Using command line:
 
 cd WILDFLY_HOME/bin
-./jboss-cli.sh --connect --user=admin --password=password
 
-I'm using gmail (don't forget to allow "less secure apps" https://www.google.com/settings/security/lesssecureapps) 
+./jboss-cli.sh --connect --user=admin --password=password
 
 /socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=mail-smtp:add(host=smtp.gmail.com, port=465)
 
