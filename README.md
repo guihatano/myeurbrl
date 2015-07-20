@@ -33,6 +33,7 @@ I'm using gmail (don't forget to allow "less secure apps" https://www.google.com
 
 Using command line:
 
+```
 cd WILDFLY_HOME/bin
 
 ./jboss-cli.sh --connect --user=admin --password=password
@@ -42,3 +43,4 @@ cd WILDFLY_HOME/bin
 /subsystem=mail/mail-session=myeurbrlMail:add(jndi-name=java:/mail/myeurbrlMail)
 
 /subsystem=mail/mail-session=myeurbrlMail/server=smtp:add(outbound-socket-binding-ref=mail-smtp, ssl=true, username=your_email@gmail.com, password=your_password)
+```
