@@ -1,4 +1,4 @@
-# myeurbrl
+# myEURBRL
 
 My project to see 1 Euro in Brazilian Real currency (EURBRL)
 
