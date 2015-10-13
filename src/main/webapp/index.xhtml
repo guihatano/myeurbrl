@@ -1,23 +1,40 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/WEB-INF/template/main.xhtml">
 
-    <h:head>
-        <title>Cotação euro</title>
-    </h:head>
-    <h:body>
+    <ui:define name="title">Cotação euro</ui:define>
+
+    <ui:define name="template_body">
         <f:view locale="pt_BR">
             <f:metadata>
                 <f:viewAction action="#{indexBean.viewAction()}"/>
             </f:metadata>
 
-            <h:outputText value="#{indexBean.euro}">
-                <f:convertNumber type="currency" maxFractionDigits="2" minIntegerDigits="1"/>
-            </h:outputText>
-            
-        </f:view>
-    </h:body>
-</html>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col"></div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="card-square mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">EUR-BRL</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <h:outputText value="1,00 € = "/>
+                            <h:outputText value="#{indexBean.euro}">
+                                <f:convertNumber type="currency" maxFractionDigits="2" minIntegerDigits="1"/>
+                            </h:outputText>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <h:outputLink class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" value="http://www.eurohoje.com">
+                                View
+                            </h:outputLink>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col"></div>
+            </div>
 
+        </f:view>
+    </ui:define>
+</ui:composition>
